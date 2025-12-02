@@ -3,15 +3,16 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// TODO: Replace the following with your app's Firebase project configuration
+// Load Firebase config from environment. With Vite, define these in `frontend/.env` as
+// VITE_FIREBASE_API_KEY, VITE_FIREBASE_AUTH_DOMAIN, etc. Do NOT commit secrets.
 const firebaseConfig = {
-  apiKey: "AIzaSyAarQSdx6xkGXampxkCM-pxSxASVhNijt8",
-  authDomain: "healthcareapp-e9214.firebaseapp.com",
-  projectId: "healthcareapp-e9214",
-  storageBucket:"healthcareapp-e9214.firebasestorage.app" ,
-  messagingSenderId: "929681036900",
-  appId: "1:929681036900:web:363e4191e0ece70cbf3171",
-  measurementId: "G-Y9G6MRSJJ9"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
